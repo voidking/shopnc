@@ -1,0 +1,5 @@
+define(function(require,exports,module){var b=require("./zepto");require("./utils/touch");require("./utils/highlight");require("./utils/matchMedia");require("./utils/event.ortchange");
+require("./utils/gmu");require("./utils/event");require("./utils/widget");require("./utils/tabs");require("./utils/$swipe");require("./utils/$ajax");require("./utils/image");
+b("#tabs1").tabs({ajax:{type:"POST",contentType:"application/x-www-form-urlencoded"},beforeLoad:function(f,g,c){var d=this;c.data=b.param({index:d._options.active});
+},load:function(d,c){a(c);c.resize(function(){a(c);});}});function a(c){var e=b(c).width();var d=Math.floor(e/3);var f=d;b(c).css("background-color","#ffffff");
+b(c).find(".favor-img").css("float","left").css("width",d+"px").css("height",f+"px");b(c).find(".favor-img img").scaleTo(d,f);}});

@@ -1,0 +1,6 @@
+define(function(require,exports,module){var d=require("./zepto");var h=require("./utils/parseTpl");var b=require("./utils/highlight");var c=require("./utils/gmu");
+var a=require("./utils/event");var e=require("./utils/widget");var e=require("./utils/touch");require("./utils/dialog");require("./utils/$position");d(".J-dialog").on("tap",function(){var j=d(this).attr("uri");
+var i=d('<div title="确认收货"></div>');d("body").append(i);d.get(j,function(k){i.html(k);i.dialog({autoOpen:false,closeBtn:false,buttons:{"取消":function(){this.close();
+listAddress();},"确定":function(){d("#confirm_order_form").submit();}}});i.dialog("open");});});function g(){d.get("index.php?act=cart&op=newaddress&addr_id=1",function(i){d("#J-add-address").html(i);
+d("#J-add-address").dialog({autoOpen:false,closeBtn:false,buttons:{"取消":function(){this.close();listAddress();},"确定":function(){if(submitaddress()){this.close();
+listAddress();}}}});d("#J-add-address").dialog("open");regionInit("region");});}function f(i){alert(i);}});

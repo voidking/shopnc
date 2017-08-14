@@ -1,0 +1,4 @@
+define(function(require,exports,module){var a=require("../zepto");a.fn.slideDown=function(d,e){var c=this.css("position");this.show();this.css({position:"absolute",visibility:"hidden"});
+var b=this.height();this.css({position:c,visibility:"visible",overflow:"hidden",height:0});this.animate({height:b},d,"linear",function(){if(typeof(e)=="function"){e();
+}});};a.fn.slideUp=function(e,f){var d=this.css("position");this.css({position:"absolute",visibility:"hidden"});var c=this.height();this.css({position:d,visibility:"visible",overflow:"hidden",height:c});
+var b=this;this.animate({height:0},e,"linear",function(){b.css({height:c,display:"none"});if(typeof(f)=="function"){f();}});};});

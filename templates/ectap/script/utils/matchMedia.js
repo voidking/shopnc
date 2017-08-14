@@ -1,0 +1,4 @@
+define(function(require,exports,module){var a=require("../zepto");a.matchMedia=(function(){var e=0,c="gmu-media-detect",b=a.fx.transitionEnd,f=a.fx.cssPrefix,d=a("<style></style>").append("."+c+"{"+f+"transition: width 0.001ms; width: 0; position: absolute; clip: rect(1px, 1px, 1px, 1px);}\n").appendTo("head");
+return function(i){var k=c+e++,j,h=[],g;d.append("@media "+i+" { #"+k+" { width: 1px; } }\n");j=a('<div class="'+c+'" id="'+k+'"></div>').appendTo("body").on(b,function(){g.matches=j.width()===1;
+a.each(h,function(l,m){a.isFunction(m)&&m.call(g,g);});});g={matches:j.width()===1,media:i,addListener:function(l){h.push(l);return this;},removeListener:function(m){var l=h.indexOf(m);
+~l&&h.splice(l,1);return this;}};return g;};}());});

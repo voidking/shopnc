@@ -1,0 +1,2 @@
+define(function(require,exports,module){var b=require("../zepto");var a=a||{version:"@version",$:b,staticCall:(function(e){var d=e.fn,f=[].slice,c=e();
+c.length=1;return function(h,g){c[0]=h;return d[g].apply(c,f.call(arguments,2));};})(b)};return a;});

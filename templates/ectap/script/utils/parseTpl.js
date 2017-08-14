@@ -1,0 +1,3 @@
+define(function(require,exports,module){var a=require("../zepto");a.parseTpl=function(e,d){var b="var __p=[];with(obj||{}){__p.push('"+e.replace(/\\/g,"\\\\").replace(/'/g,"\\'").replace(/<%=([\s\S]+?)%>/g,function(f,g){return"',"+g.replace(/\\'/,"'")+",'";
+}).replace(/<%([\s\S]+?)%>/g,function(f,g){return"');"+g.replace(/\\'/,"'").replace(/[\r\n\t]/g," ")+"__p.push('";}).replace(/\r/g,"\\r").replace(/\n/g,"\\n").replace(/\t/g,"\\t")+'\');}return __p.join("");',c=new Function("obj",b);
+return d?c(d):c;};});

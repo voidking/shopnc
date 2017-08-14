@@ -1,0 +1,2 @@
+define(function(require,exports,module){var a=require("../zepto");a.mediaQuery={ortchange:"screen and (width: "+window.innerWidth+"px)"};a.matchMedia(a.mediaQuery.ortchange).addListener(function(){a(window).trigger("ortchange");
+});});

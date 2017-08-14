@@ -1,0 +1,10 @@
+(function(c){if(window.define==undefined){var a={},b=a.exports={};c(null,b,a),window.lazyload=a.exports;}else{define("./lazyload.js",["../zepto"],c);}})(function(e,a,b){var c=e?e("zepto"):window.$,d={init:function(f){var g=this;
+g.img.init();},img:{trigger:function(){var f=this,g=f.op;isPhone=f.isPhone,eventType=isPhone&&"touchend"||"scroll",f.prevlist&&f.prevlist.each(function(h,i){i&&(i.onerror=i.onload=null);
+}),f.imglist=c("img.lazy"),f.prevlist=c(f.imglist.concat()),c(window).trigger(eventType);},init:function(){var k=this,l=5,m=200,f=navigator.appVersion.match(/(iPhone\sOS)\s([\d_]+)/),g=f&&!0||!1,h=g&&f[2].split("_");
+h=h&&parseFloat(h.length>1?h.splice(0,2).join("."):h[0],10),g=k.isPhone=g&&h<6;if(g){var i,j;c(window).on("touchstart",function(n){i={sy:window.scrollY,time:Date.now()},j&&clearTimeout(j);
+}).on("touchend",function(n){if(n&&n.changedTouches){var o=Math.abs(window.scrollY-i.sy);if(o>l){var p=Date.now()-i.time;j=setTimeout(function(){k.changeimg(),i={},clearTimeout(j),j=null;
+},p>m?0:200);}}else{k.changeimg();}}).on("touchcancel",function(){j&&clearTimeout(j),i={};});}else{c(window).on("scroll",function(){k.changeimg();});}k.trigger(),k.isload=!0;
+},changeimg:function(){function h(k){var l=window.pageYOffset,i=window.pageYOffset+window.innerHeight,j=k.offset().top;return j>=l&&j-400<=i;}function f(k,i){var j=k.attr("dataimg");
+k.attr("src",j),k[0].onload||(k[0].onload=function(){c(this).removeClass("lazy").removeAttr("dataimg"),g.imglist[i]=null,this.onerror=this.onload=null;
+},k[0].onerror=function(){this.src="http://a.tbcdn.cn/mw/s/common/icons/nopic/no-90.png",c(this).removeClass("lazy").removeAttr("dataimg"),g.imglist[i]=null,this.onerror=this.onload=null;
+});}var g=this;g.imglist.each(function(k,i){if(!i){return;}var j=c(i);if(!h(j)){return;}if(!j.attr("dataimg")){return;}f(j,k);});}}};b.exports=d;});

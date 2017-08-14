@@ -1,0 +1,2 @@
+define(function(require,exports,module){var a=document.getElementById("J_m-slider");var b=document.getElementById("position").getElementsByTagName("span");
+require("./slider").run(a,b);require("./goods_spec");});

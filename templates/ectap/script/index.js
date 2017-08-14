@@ -1,0 +1,2 @@
+define(function(require,exports,module){require("./search");var a=document.getElementById("J_m-slider");var b=document.getElementById("position").getElementsByTagName("span");
+require("./slider").run(a,b,3000);require("./utils/lazyload").init();});

@@ -1,0 +1,2 @@
+define(function(require,exports,module){var c=require("../zepto");var d=window;function b(){c(d).on("scroll",c.debounce(80,function(){c(d).trigger("scrollStop");
+},false));}function a(){c(d).off("scroll");b();}b();c(d).on("pageshow",function(f){f.persisted&&c(d).off("touchstart",a).one("touchstart",a);});});
